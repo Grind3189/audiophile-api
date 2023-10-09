@@ -1,0 +1,126 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "isNew": {
+      "type": "boolean"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "features": {
+      "type": "text"
+    },
+    "mobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tablet": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "desktop": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "gallery_images": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::gallery-image.gallery-image",
+      "mappedBy": "product"
+    },
+    "categoryMobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categoryTablet": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categoryDesktop": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "included_items": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::included-item.included-item",
+      "mappedBy": "products"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "speakers",
+        "headphones",
+        "earphones"
+      ]
+    },
+    "recommends": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::recommend.recommend",
+      "mappedBy": "products"
+    }
+  }
+}

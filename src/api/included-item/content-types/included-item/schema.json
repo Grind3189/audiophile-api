@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "included_items",
+  "info": {
+    "singularName": "included-item",
+    "pluralName": "included-items",
+    "displayName": "includedItem"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quantity": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "included_items"
+    }
+  }
+}
